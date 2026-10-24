@@ -26,7 +26,7 @@ export function createHero(onSelect: (w: World) => void, worldsEl: () => HTMLEle
   /* each letter carries a slice of one shared gradient, so the colour flows across the word while letters animate */
   const paintGradient = () => {
     const W = line2.scrollWidth;
-    sys.forEach((sp) => Object.assign(sp.style, { backgroundImage: GRAD, backgroundSize: `${W}px 100%`, backgroundPosition: `${-sp.offsetLeft}px 0`, backgroundRepeat: 'no-repeat', webkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }));
+    sys.forEach((sp) => Object.assign(sp.style, { backgroundImage: GRAD, backgroundSize: `${W}px 100%`, backgroundPosition: `${-sp.offsetLeft}px 0`, backgroundRepeat: 'no-repeat', padding: '0.06em 0.12em 0.32em', margin: '-0.06em -0.12em -0.32em', webkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }));
   };
   new ResizeObserver(paintGradient).observe(line2);
   document.fonts.ready.then(paintGradient);

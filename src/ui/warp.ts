@@ -20,7 +20,7 @@ export function launch(world: World, origin: { x: number; y: number }): void {
   overlay.textContent = '';
   overlay.style.background = `radial-gradient(90% 70% at 50% 45%, ${world.tone}, ${ink.void} 78%)`;
   const icon = createIcon(world.id, { animate: true });
-  const tile = h('div', { style: { width: '132px', height: '132px', filter: `drop-shadow(0 0 48px ${world.color}88)` } }, icon.el);
+  const tile = h('div', { style: { width: '132px', height: '132px', filter: `drop-shadow(0 0 40px ${world.color}99)` } }, icon.el);
   const name = h('div', { text: world.name, style: { font: `300 44px/1 ${font.display}`, fontVariationSettings: display(300), letterSpacing: '-0.02em', color: ink.text } });
   const note = h('div', { text: `Opening the ${world.language} world`, style: { font: `500 11px ${font.mono}`, letterSpacing: '0.22em', textTransform: 'uppercase', color: world.color } });
   overlay.append(tile, name, note);

@@ -15,7 +15,7 @@ export function createLauncher(): HTMLElement {
 
   const cells = worlds.map((w) => {
     const icon = createIcon(w.id, { animate: true });
-    const tile = h('div', { style: { position: 'relative', width: '100%', aspectRatio: '1', borderRadius: '23%', boxShadow: `0 16px 36px rgba(0,0,0,.5), 0 0 44px ${w.color}30`, transformStyle: 'preserve-3d' } }, icon.el);
+    const tile = h('div', { style: { position: 'relative', width: '100%', aspectRatio: '1', filter: `drop-shadow(0 14px 18px rgba(0,0,0,.5)) drop-shadow(0 0 20px ${w.color}40)`, transformStyle: 'preserve-3d' } }, icon.el);
     if (w.id === 'noctiluca') {
       tile.append(h('span', { text: solved > 0 ? String(solved) : 'LIVE', style: { position: 'absolute', top: '-7px', right: '-7px', minWidth: '26px', padding: '4px 7px', borderRadius: '999px', background: w.color, color: '#04141a', font: `700 9.5px ${font.mono}`, letterSpacing: '0.08em', textAlign: 'center', boxShadow: `0 0 18px ${w.color}88`, zIndex: 2 } }));
     }
