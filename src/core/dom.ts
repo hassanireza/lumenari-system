@@ -80,7 +80,7 @@ export function onVisible(el: Element, fn: (visible: boolean) => void, margin = 
 
 /** Reset defaults and add a keyboard-only focus ring, since no stylesheet is involved. */
 function interactive(el: HTMLElement): void {
-  css(el, { appearance: 'none', background: 'none', border: '0', margin: '0', padding: '0', font: 'inherit', color: 'inherit', textDecoration: 'none', cursor: 'pointer', textAlign: 'inherit', display: 'block', '-webkit-tap-highlight-color': 'transparent', touchAction: 'manipulation' });
+  css(el, { appearance: 'none', background: 'none', border: '0', margin: '0', padding: '0', font: 'inherit', color: 'inherit', textDecoration: 'none', cursor: 'default', textAlign: 'inherit', display: 'block', '-webkit-tap-highlight-color': 'transparent', touchAction: 'manipulation' });
   el.addEventListener('focus', () => { if (el.matches(':focus-visible')) { el.style.outline = '2px solid #f2cf8b'; el.style.outlineOffset = '4px'; } });
   el.addEventListener('blur', () => { el.style.outline = 'none'; });
 }

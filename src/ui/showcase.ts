@@ -149,12 +149,12 @@ export function createShowcase(): Showcase {
   addEventListener('pointermove', (e) => {
     if (!drag) return;
     const dx = e.clientX - drag.x;
-    if (Math.abs(dx) > 5) { drag.moved = true; scroller.style.cursor = 'grabbing'; }
+    if (Math.abs(dx) > 5) drag.moved = true;
     scroller.scrollLeft = drag.left - dx;
   });
   addEventListener('pointerup', () => {
     if (!drag) return;
-    const moved = drag.moved; drag = null; scroller.style.cursor = '';
+    const moved = drag.moved; drag = null;
     scroller.style.scrollSnapType = 'x mandatory'; snapped = true;
     if (moved) { suppressClick = true; setTimeout(() => { suppressClick = false; }, 60); go(active); }
   });

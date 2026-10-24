@@ -10,7 +10,6 @@ import { env } from './core/env';
 import { gsap, initMotion, lock, ScrollTrigger } from './core/motion';
 import { font, ink } from './core/tokens';
 import { createBackdrop } from './ui/backdrop';
-import { createCursor } from './ui/cursor';
 import { createDock } from './ui/dock';
 import { createFooter } from './ui/footer';
 import { createHero } from './ui/hero';
@@ -55,7 +54,6 @@ async function boot(): Promise<void> {
     { sky: hero.el, worlds: worldsSection, method, about: footer },
   );
   document.body.append(createTopbar(), dock);
-  const cursor = createCursor(); if (cursor) document.body.append(cursor);
 
   /* deep link: #world-<id> opens that poster */
   const hash = location.hash.match(/^#world-(\w+)$/);
