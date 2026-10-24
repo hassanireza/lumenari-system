@@ -33,7 +33,7 @@ export function createShowcase(): Showcase {
 
   const cards: Card[] = worlds.map((w) => {
     const icon = createIcon(w.id, { animate: true });
-    const iconWrap = h('div', { style: { position: 'relative', borderRadius: '23%', boxShadow: `0 28px 60px rgba(0,0,0,.55), 0 0 90px ${w.color}55`, transformStyle: 'preserve-3d' } }, icon.el);
+    const iconWrap = h('div', { style: { position: 'relative', filter: `drop-shadow(0 26px 30px rgba(0,0,0,.55)) drop-shadow(0 0 40px ${w.color}77)`, transformStyle: 'preserve-3d' } }, icon.el);
     const glow = h('div', { style: { position: 'absolute', left: '50%', top: '50%', width: '120%', aspectRatio: '1', transform: 'translate(-50%,-50%)', borderRadius: '50%', background: `radial-gradient(circle, ${w.color}55, transparent 62%)` } });
     const rings = s('svg', { viewBox: '0 0 300 300', 'aria-hidden': 'true' });
     rings.style.cssText = 'position:absolute;left:50%;top:50%;width:150%;height:150%;transform:translate(-50%,-50%);overflow:visible';
